@@ -6,14 +6,14 @@
     </head>
     <body ng-controller='mainController'>
 
-      <form> <br>
+      <form ng-submit="create(info)">
         <input ng-model="info.nom" placeholder="Nom">
         <input ng-model="info.prenom" placeholder="Prenom">
         <input ng-model="info.email" placeholder="Email">
-        <input ng-click="create(info)" type="button" value="Ajouter">
+        <input type="submit" value="Ajouter">
       </form> <br>
 
-      <table ng-show="infos.length>0">
+      <table ng-show="infos.length>1">
    <tr>
       <th>Nom</th>
       <th>Prenom</th>
