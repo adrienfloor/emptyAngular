@@ -4,7 +4,27 @@
         <meta charset="utf-8">
         <title>Angular Project</title>
     </head>
-    <body ng-controller='mainController as vm'>
+    <body ng-controller='mainController'>
+
+      <form> <br>
+        <input ng-model="info.nom" placeholder="Nom">
+        <input ng-model="info.prenom" placeholder="Prenom">
+        <input ng-model="info.email" placeholder="Email">
+        <input ng-click="create(info)" type="button" value="Ajouter">
+      </form> <br>
+
+      <table ng-show="infos.length>0">
+   <tr>
+      <th>Nom</th>
+      <th>Prenom</th>
+      <th>Email</th>
+   </tr> <br>
+   <tr ng-repeat="info in infos">
+      <td>{{info.nom}}</td>
+      <td>{{info.prenom}}</td>
+      <td>{{info.email}}</td>
+   </tr> <br>
+</table>
 
         <script src="js/libs/angular.min.js"></script>
         <script src="js/controllers/mainController.js"></script>
